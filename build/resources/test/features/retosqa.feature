@@ -1,9 +1,8 @@
 #Autor: Elkin Fabian Alfonso Bermudez
   @stories
-  Feature: Reto sqa
-    As I make a test for sqa
+  Feature: Select two products of the category "Amor" and add them to the buycar
   @scenario1
-  Scenario: I making a test sqa
-    Given than Fabian went learn
-    When he searchs a internet page
-    Then he inserts the url
+  Scenario: Add two products to buy car
+    Given Open page
+    When the customer selects amor category and add two products
+    Then those products are adding to the buycar

@@ -1,6 +1,7 @@
 package co.com.sqa.certification.reto.stepdefinitions;
 
 import co.com.sqa.certification.reto.tasks.AbrirPagina;
+import co.com.sqa.certification.reto.tasks.SeleccionarProducto;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,21 +16,17 @@ public class StepsDefinitions
     {
         OnStage.setTheStage(new OnlineCast());
     }
-    @Given("than Fabian went learn")
-    public void thanFabianWentLearn() throws Exception{
-        // Write code here that turns the phrase above into concrete actions
+    @Given("Open page")
+    public void openPage() {
         OnStage.theActorCalled("Fabian").wasAbleTo(AbrirPagina.abrirPagina());
     }
-
-    @When("he searchs a internet page")
-    public void heSearchsAInternetPage() {
-        // Write code here that turns the phrase above into concrete actions
-
+    @When("the customer selects amor category and add two products")
+    public void theCustomerSelectsAmorCategoryAndAddTwoProducts() {
+        OnStage.theActorInTheSpotlight().attemptsTo(SeleccionarProducto.seleccionarProductos());
     }
 
-    @Then("he inserts the url")
-    public void heInsertsTheUrl() {
+    @Then("those products are adding to the buycar")
+    public void thoseProductsAreAddingToTheBuycar() {
         // Write code here that turns the phrase above into concrete actions
-
     }
 }

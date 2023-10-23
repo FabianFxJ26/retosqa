@@ -5,6 +5,7 @@ import co.com.sqa.certification.reto.userInterface.PaginaParaAbrir;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Open;
 
 public class AbrirPagina implements Task {
@@ -16,6 +17,6 @@ public class AbrirPagina implements Task {
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
-           actor.attemptsTo(Open.browserOn(paginaParaAbrir));
+           actor.attemptsTo(Open.browserOn(paginaParaAbrir), Click.on(PaginaParaAbrir.HYPERVINCULO_CATEGORIA_AMOR));
     }
 }
