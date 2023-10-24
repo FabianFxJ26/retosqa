@@ -7,15 +7,16 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
-public class SeleccionarProducto implements Task {
+public class SeleccionarProductoAmor implements Task {
     private CategoriaAmor categoriaAmor;
-    public static SeleccionarProducto seleccionarProductos()
+    private PaginaParaAbrir paginaParaAbrir;
+    public static SeleccionarProductoAmor seleccionarProductos()
     {
-        return Tasks.instrumented(SeleccionarProducto.class);
+        return Tasks.instrumented(SeleccionarProductoAmor.class);
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(CategoriaAmor.PRODUCTO_1),Click.on(CategoriaAmor.AGREGAR_AL_CARRITO_PRODUCTO_1),
+        actor.attemptsTo(Click.on(CategoriaAmor.HYPERVINCULO_CATEGORIA_AMOR),Click.on(CategoriaAmor.PRODUCTO_1),Click.on(CategoriaAmor.AGREGAR_AL_CARRITO_PRODUCTO_1),
                 Click.on(CategoriaAmor.SEGUIR_COMPRANDO),Click.on(CategoriaAmor.PRODUCTO_2),
                 Click.on(CategoriaAmor.AGREGAR_AL_CARRITO_PRODUCTO_2));
     }

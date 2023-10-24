@@ -1,10 +1,10 @@
 package co.com.sqa.certification.reto.stepdefinitions;
 
 import co.com.sqa.certification.reto.tasks.AbrirPagina;
-import co.com.sqa.certification.reto.tasks.SeleccionarProducto;
+import co.com.sqa.certification.reto.tasks.SeleccionarProductoAmor;
+import co.com.sqa.certification.reto.tasks.SeleccionarProductoCumpleanios;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -22,11 +22,17 @@ public class StepsDefinitions
     }
     @When("the customer selects amor category and add two products")
     public void theCustomerSelectsAmorCategoryAndAddTwoProducts() {
-        OnStage.theActorInTheSpotlight().attemptsTo(SeleccionarProducto.seleccionarProductos());
+        OnStage.theActorInTheSpotlight().attemptsTo(SeleccionarProductoAmor.seleccionarProductos());
     }
-
-    @Then("those products are adding to the buycar")
-    public void thoseProductsAreAddingToTheBuycar() {
-        // Write code here that turns the phrase above into concrete actions
+    @Given("select the product")
+    public void selectTheProduct() {
+        OnStage.theActorCalled("Fabian").wasAbleTo(AbrirPagina.abrirPagina());
+    }
+    @When("it add the product to the buy car")
+    public void itAddTheProductToTheBuyCar() {
+        OnStage.theActorInTheSpotlight().attemptsTo(SeleccionarProductoCumpleanios.seleccionarProducto());
+    }
+    @When("it is deleting to the buy car")
+    public void itIsDeletingToTheBuyCar() {
     }
 }
